@@ -92,11 +92,11 @@ const LeaderTable = ({ data }) => {
     <div className="h-full overflow-y-auto p-32">
       <div className="rounded-md border h-full overflow-y-auto pb-8">
         <Table>
-          <TableHeader className="sticky top-0 bg-background z-10">
+          <TableHeader className="sticky top-0 bg-background z-50">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <TableHead key={header.id}>
+                  <TableHead key={header.id} className='px-6'>
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -117,7 +117,7 @@ const LeaderTable = ({ data }) => {
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="p-3 py-4">
+                    <TableCell key={cell.id} className="px-6 py-4">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()

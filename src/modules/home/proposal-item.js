@@ -13,7 +13,7 @@ export const ProposalItem = ({ proposal, onClick }) => (
     onClick={onClick}
   >
     <div className="p-4 flex-grow flex flex-col">
-      <div className="flex mb-2 gap-4 items-start">
+      <div className="flex mb-2 gap-4 items-start gap-2">
         <div
           className={`w-2 h-2 rounded-full mr-3 ${proposal.statusColor} pt-1 flex-shrink-0`}
         >
@@ -26,17 +26,17 @@ export const ProposalItem = ({ proposal, onClick }) => (
       <p className="text-sm text-gray-600 mb-4 flex-grow overflow-hidden line-clamp-3">
         {proposal.description}
       </p>
-      <div className="flex justify-between text-xs text-gray-500 mt-auto">
+      <div className="flex justify-between text-xs text-gray-500 mt-auto w-full">
         <div className="flex gap-3 items-center">
-          <span className="flex items-center">
-            <Users size={12} className="mr-1" />
+          {/* <div className="flex items-center gap-1">
+            <Users size={12}/>
             {proposal.author}
-          </span>
+          </div> */}
 
-          <span className="flex items-center">
-            <Clock size={12} className="mr-1" />
+          <div className="flex items-center gap-1">
+            <Clock size={12}/>
             {proposal.timeLeft}
-          </span>
+          </div>
         </div>
 
         <span className="flex items-center">

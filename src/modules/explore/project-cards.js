@@ -10,21 +10,7 @@ const getRandomGradient = () => {
 };
 
 const Avatar = ({ name, icon }) => {
-  if (icon) {
-    return <img src={"/nft.jpg"} alt={name} className="w-12 h-12 rounded-lg" />;
-  }
-
-  const initial = name.charAt(0).toUpperCase();
-  const bgColor = getRandomGradient();
-
-  return (
-    <div
-      className="w-12 h-12 rounded-lg flex items-center justify-center text-white font-bold text-lg"
-      style={{ background: bgColor }}
-    >
-      {initial}
-    </div>
-  );
+  return <img src={"/nft.jpg"} alt={name} className="  " />;
 };
 
 export const ProjectCard = ({
@@ -48,7 +34,7 @@ export const ProjectCard = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="bg-white rounded-lg shadow-sm overflow-hidden h-64 flex flex-col border cursor-pointer"
+        className="bg-white rounded-lg shadow-sm overflow-hidden h-64 flex flex-col border cursor-pointer relative"
         onClick={() => console.log("Clicked")}
       >
         <div className="h-24 relative" style={{ background: gradientBg }}>
@@ -61,15 +47,13 @@ export const ProjectCard = ({
             Follow
           </motion.button>
         </div>
-        <div className="p-4 pt-0 flex flex-col flex-grow">
-          <div className="flex items-start justify-between mb-2">
-            <div className="flex items-center">
-              <div className="absolute">
-                <Avatar name={name} icon={icon} />
-              </div>
-            </div>
+        <div className="absolute top-10 left-6 mt-12 ml-2 w-full h-full aspect-square">
+          <div className="w-20 rounded-lg overflow-hidden">
+            <Avatar name={name} icon={icon} />
           </div>
-          <h3 className="text-lg font-semibold mt-6 flex items-center">
+        </div>
+        <div className="flex flex-col flex-grow p-4 pt-12">
+          <h3 className="text-lg font-semibold mt-2 flex items-center">
             {name}{" "}
             {verified && (
               <span className="flex text-yellow-500 ml-1">
@@ -77,13 +61,16 @@ export const ProjectCard = ({
               </span>
             )}
           </h3>
-          {description && (
-            <p className="text-sm text-gray-600 mb-2 h-16 overflow-hidden w-full">
-              {description.length > 100
-                ? `${description.slice(0, 100)}...`
-                : description}
-            </p>
-          )}
+          <div className="h-16">
+            {description && (
+              <p className="text-sm text-gray-600 mb-2 overflow-hidden w-full">
+                {description.length > 100
+                  ? `${description.slice(0, 100)}...`
+                  : description}
+              </p>
+            )}
+          </div>
+
           <div className="mt-auto">
             <p className="text-sm text-gray-700">
               <span className="font-semibold">{proposals}</span> proposals ·{" "}
