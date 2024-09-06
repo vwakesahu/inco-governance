@@ -15,14 +15,19 @@ export const ChannelCard = ({
       avatarUrl || `https://api.dicebear.com/6.x/avataaars/svg?seed=${seed}`
     );
   }, [name, avatarUrl]);
+  const selectedStyle = isSelected
+    ? {
+        borderLeft: "4px solid #3b82f6", // blue-500 in hex
+        paddingLeft: "12px", // Adjust padding to compensate for the border
+      }
+    : {};
 
   return (
     <motion.div
       onClick={onClick}
       whileTap={{ scale: 0.95 }}
-      className={`p-4 rounded-lg border hover:bg-muted-foreground/10 w-full h-24 flex items-center justify-start space-x-4 bg-white transition-all duration-300 cursor-pointer ${
-        isSelected ? `border-l-4 border-l-blue-500` : "border"
-      }`}
+      className="p-4 rounded-lg border hover:bg-muted-foreground/10 w-full h-24 flex items-center justify-start space-x-4 bg-white transition-all duration-300 cursor-pointer"
+      style={selectedStyle}
     >
       <div
         className={`w-12 h-12 rounded-full overflow- border overflow-hidden ${
