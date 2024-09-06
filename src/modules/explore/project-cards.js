@@ -53,14 +53,14 @@ export const ProjectCard = ({
           </div>
         </div>
         <div className="flex flex-col flex-grow p-4 pt-12">
-          <h3 className="text-lg font-semibold mt-2 flex items-center">
-            {name}{" "}
+          <div className="text-lg font-semibold mt-2 flex items-center gap-4">
+            <div className="mr-2">{name}</div>{" "}
             {verified && (
-              <span className="flex text-yellow-500 ml-1">
-                <BsPatchCheckFill />
-              </span>
+              <div className="flex text-yellow-500 ml-1">
+                <BsPatchCheckFill className="text-yellow-400" />
+              </div>
             )}
-          </h3>
+          </div>
           <div className="h-16">
             {description && (
               <p className="text-sm text-gray-600 mb-2 overflow-hidden w-full">
