@@ -14,9 +14,11 @@ import { Home, FileText, Users, MessageSquare, Moon } from "lucide-react";
 
 const Sidebar = () => (
   <div className="w-64 h-screen bg-gray-100 p-4 flex flex-col">
-    <div className="flex items-center mb-8">
-      <div className="w-8 h-8 bg-purple-500 rounded-md mr-2"></div>
-      <span className="text-xl font-semibold">Aave</span>
+    <div className="flex items-center mb-8 px-2">
+      <div className="w-28  rounded-md mr-2">
+        <img src="/logo/inco.svg" className="w-full h-full" />
+      </div>
+      {/* <span className="text-xl font-semibold">Inco</span> */}
     </div>
     <nav className="flex-1">
       <SidebarItem icon={<Home size={20} />} label="Overview" />
@@ -31,7 +33,7 @@ const SidebarItem = ({ icon, label, active = false }) => (
   <div
     className={`flex items-center p-2 rounded-md mb-2 ${
       active
-        ? "bg-purple-100 text-purple-600"
+        ? "bg-[#3673F5]/10 text-[#3673F5]"
         : "text-gray-600 hover:bg-gray-200"
     }`}
   >
@@ -41,8 +43,8 @@ const SidebarItem = ({ icon, label, active = false }) => (
 );
 
 const LeaderboardTable = ({ users }) => (
-  <Table className='relative'>
-    <TableHeader className='sticky top-0'>
+  <Table className="relative">
+    <TableHeader className="relative">
       <TableRow>
         <TableHead>User</TableHead>
         <TableHead className="text-right">Proposals</TableHead>
@@ -96,7 +98,7 @@ const TopBar = ({ address }) => (
   </div>
 );
 
-export default function AaveDashboard() {
+export default function Dashboard() {
   const users = [
     {
       name: "indigituseth.eth",

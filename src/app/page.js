@@ -1,12 +1,79 @@
-import Leaderboard from "@/components/leaderboard";
+"use client";
+import LayoutD from "@/components/layout";
+import ProposalDashboard from "@/components/proposalDashboard";
 import React from "react";
 
-const Page = () => {
+export default function Home() {
   return (
-    <div>
-      <Leaderboard />
-    </div>
+    <LayoutD>
+      <ProposalDashboard />
+    </LayoutD>
   );
-};
+}
 
-export default Page;
+export const allProposals = {
+  "Channel 1": [
+    {
+      id: "1a",
+      title: "Improve Network Security",
+      author: "Alice",
+      votes: 15,
+      timeLeft: "2d left",
+    },
+    {
+      id: "1b",
+      title: "Implement New Consensus Algorithm",
+      author: "Bob",
+      votes: 8,
+      timeLeft: "4d left",
+    },
+  ],
+  "Channel 2": [
+    {
+      id: "2a",
+      title: "Optimize Smart Contract Execution",
+      author: "Charlie",
+      votes: 12,
+      timeLeft: "1d left",
+    },
+    {
+      id: "2b",
+      title: "Introduce New VM Instructions",
+      author: "David",
+      votes: 7,
+      timeLeft: "5d left",
+    },
+  ],
+  "Channel 3": [
+    {
+      id: "3a",
+      title: "Redesign UI for Mobile Wallets",
+      author: "Eva",
+      votes: 20,
+      timeLeft: "3d left",
+    },
+    {
+      id: "3b",
+      title: "Create New NFT Marketplace Theme",
+      author: "Frank",
+      votes: 14,
+      timeLeft: "2d left",
+    },
+  ],
+  "Channel 4": [
+    {
+      id: "4a",
+      title: "Launch Community Outreach Program",
+      author: "Grace",
+      votes: 18,
+      timeLeft: "6d left",
+    },
+    {
+      id: "4b",
+      title: "Organize Virtual Blockchain Conference",
+      author: "Henry",
+      votes: 22,
+      timeLeft: "8d left",
+    },
+  ],
+};
