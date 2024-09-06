@@ -24,6 +24,7 @@ export default Page;
 
 export const projects = [
   {
+    id: 1,
     name: "Aave",
     icon: "/aave-icon.svg",
     proposals: 681,
@@ -31,6 +32,7 @@ export const projects = [
     verified: true,
   },
   {
+    id: 2,
     name: "ENS",
     icon: "/ens-icon.svg",
     proposals: 64,
@@ -38,6 +40,7 @@ export const projects = [
     verified: true,
   },
   {
+    id: 3,
     name: "ApeCoin DAO",
     icon: "/apecoin-icon.svg",
     description: "ApeCoin DAO Voting: APE Improvement Proposals...",
@@ -46,6 +49,7 @@ export const projects = [
     verified: true,
   },
   {
+    id: 4,
     name: "Balancer",
     icon: "/balancer-icon.svg",
     proposals: 835,
@@ -53,6 +57,7 @@ export const projects = [
     verified: true,
   },
   {
+    id: 5,
     name: "Lido",
     icon: "/lido-icon.svg",
     proposals: 320,
@@ -60,6 +65,7 @@ export const projects = [
     verified: true,
   },
   {
+    id: 6,
     name: "Starknet",
     icon: "/starknet-icon.svg",
     description: "Starknet is a permissionless,...",
@@ -68,6 +74,7 @@ export const projects = [
     verified: true,
   },
   {
+    id: 7,
     name: "SafeDAO",
     icon: "/safedao-icon.svg",
     description: "Unlock Ownership.",
@@ -76,6 +83,7 @@ export const projects = [
     verified: true,
   },
   {
+    id: 8,
     name: "Heroes of Mavia",
     icon: "/mavia-icon.svg",
     description: "Heroes of Mavia is a Web3 mobile strategy game...",

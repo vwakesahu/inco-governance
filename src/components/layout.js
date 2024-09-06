@@ -1,10 +1,10 @@
 import React from "react";
 import Sidebar from "./sidebar";
 
-const LayoutD = ({ children }) => {
+const LayoutD = ({ children, linkset = "default" }) => {
   return (
     <div className="flex">
-      <Sidebar />
+      <Sidebar linkSet={linkset} />
       <main className="flex-grow h-screen">
         <div className="p-6 bg-gray-100 h-full">
           <div className="flex flex-col flex-grow bg-white h-full rounded-lg shadow-sm overflow-hidden">

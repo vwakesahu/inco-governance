@@ -11,10 +11,10 @@ const ProposalDashboard = ({
   emptyStateMessage = "No proposals available.",
 }) => {
   const channels = [
-    { name: "Channel 1", icon: Zap, color: "border-l-blue-500" },
-    { name: "Channel 2", icon: Cpu, color: "border-l-green-500" },
-    { name: "Channel 3", icon: Palette, color: "border-l-purple-500" },
-    { name: "Channel 4", icon: Megaphone, color: "border-l-yellow-500" },
+    { name: "Space 1", icon: Zap, color: "border-l-blue-500" },
+    { name: "Space 2", icon: Cpu, color: "border-l-green-500" },
+    { name: "Space 3", icon: Palette, color: "border-l-purple-500" },
+    { name: "Space 4", icon: Megaphone, color: "border-l-yellow-500" },
   ];
 
   const [selectedProposal, setSelectedProposal] = useState(null);

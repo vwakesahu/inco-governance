@@ -12,7 +12,7 @@ export default function Home() {
 }
 
 export const allProposals = {
-  "Channel 1": [
+  "Space 1": [
     {
       id: "1a",
       title: "Improve Network Security",
@@ -28,7 +28,7 @@ export const allProposals = {
       timeLeft: "4d left",
     },
   ],
-  "Channel 2": [
+  "Space 2": [
     {
       id: "2a",
       title: "Optimize Smart Contract Execution",
@@ -44,7 +44,7 @@ export const allProposals = {
       timeLeft: "5d left",
     },
   ],
-  "Channel 3": [
+  "Space 3": [
     {
       id: "3a",
       title: "Redesign UI for Mobile Wallets",
@@ -60,7 +60,7 @@ export const allProposals = {
       timeLeft: "2d left",
     },
   ],
-  "Channel 4": [
+  "Space 4": [
     {
       id: "4a",
       title: "Launch Community Outreach Program",
