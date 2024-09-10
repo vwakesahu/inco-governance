@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Header from "@/components/header";
 import LayoutD from "@/components/layout";
 import { FiShare2, FiSettings } from "react-icons/fi";
-import { CopyIcon } from "lucide-react";
+import { CopyIcon, CheckIcon } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -13,9 +13,28 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useWallets } from "@privy-io/react-auth";
+import { truncateAddress } from "@/utils/truncateAddress";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const ProfilePage = () => {
   const [activities, setActivities] = useState([]);
+  const { wallets } = useWallets();
+  const w0 = wallets[0];
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    if (w0?.address) {
+      await navigator.clipboard.writeText(w0.address);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+    }
+  };
 
   return (
     <LayoutD>
@@ -47,15 +66,35 @@ const ProfilePage = () => {
           </div>
 
           <div className="rounded-lg shadow-sm pt-12 mt-20">
-            <div className="pt-4">
-              <h1 className="text-3xl font-bold">0xc637...50FC</h1>
-              <p className="text-gray-600 flex items-center mt-1">
-                0xc637...50FC
-                <button className="ml-2 text-gray-400 hover:text-gray-600">
-                  <CopyIcon size={15} />
-                </button>
-              </p>
-            </div>
+            {w0?.address && (
+              <div className="pt-4">
+                <h1 className="text-3xl font-bold">
+                  {truncateAddress(w0?.address, 7, 4)}
+                </h1>
+                <p className="text-gray-600 flex items-center mt-1">
+                  {truncateAddress(w0?.address, 7, 4)}
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button
+                          onClick={handleCopy}
+                          className="ml-2 text-gray-400 hover:text-gray-600 focus:outline-none"
+                        >
+                          {copied ? (
+                            <CheckIcon size={15} className="text-green-500" />
+                          ) : (
+                            <CopyIcon size={15} />
+                          )}
+                        </button>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{copied ? "Copied!" : "Copy address"}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </p>
+              </div>
+            )}
             <h2 className="text-sm font-semibold mb-4 mt-10">ACTIVITY</h2>
             <Table>
               <TableHeader>
